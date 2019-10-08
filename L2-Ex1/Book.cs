@@ -54,11 +54,6 @@ namespace Lec2
         public void GetSummary()
         {
             Console.WriteLine(GetSummaryStr());
-//            Console.WriteLine("Title: {0}\nAuthor:\n\tName: {1}\n\tAge: {2}\nSummary: \n\t{3}", 
-//                this.title, 
-//                this.author.Name, 
-//                this.author.Age, 
-//                String.Join("\n\t", blurb));                        
         }
         
         public string Title

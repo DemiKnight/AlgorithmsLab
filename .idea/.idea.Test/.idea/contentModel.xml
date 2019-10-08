@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
+    <e p="$APPLICATION_CONFIG_DIR$/scratches" t="IncludeRecursive" />
     <e p="$USER_HOME$/.Rider2019.2/system/extResources" t="IncludeRecursive" />
     <e p="$USER_HOME$/.Rider2019.2/system/resharper-host/local/Transient/ReSharperHost/v192/SolutionCaches/_Test.1401769742.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
@@ -23,20 +24,33 @@
         <e p="L1-Ex7.csproj" t="IncludeRecursive" />
       </e>
       <e p="L2-Ex1" t="IncludeRecursive">
-        <e p="Book.cs" t="Include" />
         <e p="L2-Ex1.csproj" t="IncludeRecursive" />
-        <e p="Person.cs" t="Include" />
+      </e>
+      <e p="L3-EX2" t="IncludeRecursive">
+        <e p="L3-EX2.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="L3-Ex3" t="IncludeRecursive">
+        <e p="IntStack.cs" t="Include" />
+        <e p="L3-Ex3.csproj" t="IncludeRecursive" />
         <e p="Program.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="genre" t="Include">
-          <e p="Fantasy.cs" t="Include" />
-          <e p="Horror.cs" t="Include" />
-          <e p="SciFi.cs" t="Include" />
-        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
-              <e p="L2-Ex1.AssemblyInfo.cs" t="Include" />
+              <e p="L3-Ex3.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="L3-Ex5" t="IncludeRecursive">
+        <e p="IntQueue.cs" t="Include" />
+        <e p="L3-Ex5.csproj" t="IncludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.2" t="Include">
+              <e p="L3-Ex5.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>

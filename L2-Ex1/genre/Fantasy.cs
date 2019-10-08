@@ -4,6 +4,8 @@ namespace Lec2
 {
     public class Fantasy : Book
     {
+        protected static readonly Person DEFAULT_AURTHOR = new Person("J.R.R. Tolkien", 127);
+        
         public Fantasy(string newTitle) : base(newTitle)
         {
         }
@@ -18,6 +20,11 @@ namespace Lec2
 
         public Fantasy(string title, Person author, string[] blurb) : base(title, author, blurb)
         {
+        }
+        
+        public static Person DefaultAuthor
+        {
+            get => DEFAULT_AURTHOR;
         }
     }
 }
