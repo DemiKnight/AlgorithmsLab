@@ -14,11 +14,6 @@ namespace L4_Ex1
             list = new Link(newInt, list);            
         }
 
-        public void append()
-        {
-            Link currentLink = list;
-            
-        }
 
         public override string ToString()
         {
@@ -42,12 +37,42 @@ namespace L4_Ex1
         
         public bool IsPresentItem(int item)
         {
+            Link tempLIst = list;
+            for (int index = 0; index < numberOfItems; index++)
+            {
+                if (tempLIst.Value == item) return true;
+
+                tempLIst = tempLIst.NextLink;
+            }
+            
             return false;
         }
 
         public void RemoveItem(int item)
         {
+            Link tempLink = list; //Remove and just use list
+            Link previous = tempLink;
+            int tempMax = numberOfItems;
+
+            for (int index = 0; index < tempMax; index++)
+            {
                 
+                if (tempLink.Value == item)
+                {
+                    previous.NextLink = tempLink.NextLink;
+                    numberOfItems--;
+                }
+                else
+                {
+                    previous = tempLink;
+                }
+
+                tempLink = previous;
+                tempLink = tempLink.NextLink;
+            }
+
+            
+            Console.WriteLine(tempLink);
         }
 
         public void InsertInOrder(int item)
