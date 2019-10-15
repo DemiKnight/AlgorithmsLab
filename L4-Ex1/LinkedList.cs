@@ -25,14 +25,15 @@ namespace L4_Ex1
             StringBuilder output = new StringBuilder();
             Link tempLink = list;
             
-            Console.WriteLine(list.Value);
             
             output.Append("[");
-            while (tempLink.NextLink != null)
+            for (int index = 0; index < numberOfItems; index++)
             {
                 output.Append(tempLink.Value + ",");
-                tempLink.NextLink = tempLink.NextLink.NextLink;
+                tempLink = tempLink.NextLink;
             }
+            
+            
             output.Append("]");
             
             
@@ -67,6 +68,11 @@ namespace L4_Ex1
             return numOfItems;
         }
 
+        public void RemoveIndex(int index)
+        {
+            
+        }
+        
         public int Length => numberOfItems;
 
         public Link getBase
