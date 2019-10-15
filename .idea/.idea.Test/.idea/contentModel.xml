@@ -30,27 +30,21 @@
         <e p="L3-EX2.csproj" t="IncludeRecursive" />
       </e>
       <e p="L3-Ex3" t="IncludeRecursive">
-        <e p="IntStack.cs" t="Include" />
         <e p="L3-Ex3.csproj" t="IncludeRecursive" />
-        <e p="Program.cs" t="Include" />
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
-            <e p="netcoreapp2.2" t="Include">
-              <e p="L3-Ex3.AssemblyInfo.cs" t="Include" />
-            </e>
-          </e>
-        </e>
       </e>
       <e p="L3-Ex5" t="IncludeRecursive">
-        <e p="IntQueue.cs" t="Include" />
         <e p="L3-Ex5.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="L4-Ex1" t="IncludeRecursive">
+        <e p="L4-Ex1.csproj" t="IncludeRecursive" />
+        <e p="Link.cs" t="Include" />
+        <e p="LinkedList.cs" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
-              <e p="L3-Ex5.AssemblyInfo.cs" t="Include" />
+              <e p="L4-Ex1.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
