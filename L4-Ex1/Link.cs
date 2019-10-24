@@ -15,7 +15,6 @@ namespace L4_Ex1
         {
             data = newItem;
             nextLink = newLink;
-
         }
 
         public int Value

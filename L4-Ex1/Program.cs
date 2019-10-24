@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Collections.Generic;
 namespace L4_Ex1
 {
     class Program
@@ -9,19 +9,24 @@ namespace L4_Ex1
             Console.WriteLine("Hello World!");
             
             LinkedList mainList = new LinkedList();
-            
-            mainList.addValue(1);
-            mainList.addValue(2);
-            mainList.addValue(3);
+
             mainList.addValue(4);
+            mainList.addValue(1);
+            mainList.addValue(3);
+            mainList.addValue(2);
             mainList.addValue(5);
-            
-            Link testLink = new Link(1, 
-                new Link(2, new Link(3)));
+
+//            Link testLink = new Link(1, 
+//                new Link(2, new Link(3)));
             
             Console.WriteLine(mainList.ToString());
-            mainList.RemoveItem(3);
+//            mainList.RemoveItem(1);
+//            mainList.RemoveFirst();
+
+            mainList.InsertInOrder(6);    
+
             Console.WriteLine(mainList.ToString());
+//            Console.WriteLine(mainList.ToString());
 
 
 

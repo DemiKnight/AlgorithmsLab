@@ -49,6 +49,9 @@
           </e>
         </e>
       </e>
+      <e p="L5-Ex1" t="IncludeRecursive">
+        <e p="L5-Ex1.csproj" t="IncludeRecursive" />
+      </e>
       <e p="Test" t="IncludeRecursive">
         <e p="L1-Ex1.csproj" t="IncludeRecursive" />
       </e>

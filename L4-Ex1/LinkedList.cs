@@ -6,6 +6,8 @@ namespace L4_Ex1
     public class LinkedList
     {
         private Link list = null;
+        
+        //TODO Explore whether using a while(list.NextLink == null) would be quicker.
         private int numberOfItems = 0;
         
         public void addValue(int newInt)
@@ -48,15 +50,47 @@ namespace L4_Ex1
             return false;
         }
 
+
+        public void Remove2()
+        {
+//            Link mainIterator = list;
+//            Link 
+            
+        }
+
         public void RemoveItem(int item)
         {
+            //Remove all first instances of the item, if needed
+            if (item == list.Value)
+                do
+                {
+                    RemoveFirst();
+                } while (list.Value == item);
+            
+            //Due to RemoveFirst() mutating list, it needs to be called first.
             Link tempLink = list; //Remove and just use list
             Link previous = tempLink;
-            int tempMax = numberOfItems;
 
-            for (int index = 0; index < tempMax; index++)
+            /*do
             {
+                if (tempLink.Value == item)
+                {
+                    previous.NextLink = tempLink.NextLink;
+                    numberOfItems--;
+                }
+                else
+                {
+                    previous = tempLink;
+                }
+
+                tempLink = previous;
+                tempLink = tempLink.NextLink;                
                 
+            } while (tempLink.NextLink != null);*/
+            
+//            for (Link index = tempLink; index.NextLink != null; index = index.NextLink)
+            for (int index = 0; index < numberOfItems; index++)
+            {
                 if (tempLink.Value == item)
                 {
                     previous.NextLink = tempLink.NextLink;
@@ -70,14 +104,32 @@ namespace L4_Ex1
                 tempLink = previous;
                 tempLink = tempLink.NextLink;
             }
+        }
 
-            
-            Console.WriteLine(tempLink);
+        public void RemoveFirst()
+        {
+            list = list.NextLink;
+            numberOfItems--;
         }
 
         public void InsertInOrder(int item)
         {
+            numberOfItems++;
+            Link newList = new Link(list.Value, new Link(list.NextLink.Value));
+            list = list.NextLink.NextLink;
             
+            for (int index = 0; index < numberOfItems ; index++)
+            {
+                bool Nend = false;
+                
+                while (Nend)
+                {
+                    if (list.Value == item)
+                    {
+                        
+                    }                    
+                }
+            }
         }
         
         public int CalcLength()
