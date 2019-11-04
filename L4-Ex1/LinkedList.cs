@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Text;
 
 namespace L4_Ex1
@@ -112,6 +113,7 @@ namespace L4_Ex1
             numberOfItems--;
         }
 
+
         public void InsertInOrder(int item)
         {
             numberOfItems++;
@@ -120,18 +122,77 @@ namespace L4_Ex1
             
             for (int index = 0; index < numberOfItems ; index++)
             {
-                bool Nend = false;
+                bool Nend = true;
+                bool found = false;
+                
+                Link tempLink = newList;
                 
                 while (Nend)
                 {
-                    if (list.Value == item)
+                    
+
+                    if (!found)
                     {
-                        
-                    }                    
+                        if (tempLink.NextLink == null)
+                        {
+                            tempLink.NextLink = new Link(item);
+                            Nend = false;
+                        }else if (tempLink.Value == item)
+                        {
+                            tempLink.NextLink = new Link(item, tempLink.NextLink);
+                            found = true;
+                        } else if (tempLink.Value < item)
+                        {
+                            tempLink.NextLink = new Link(item, tempLink.NextLink);
+                            found = true;
+                        }else /*if (tempLink.Value > item)*/
+                        {
+                            //Matched none of the citeria
+                            tempLink = tempLink.NextLink;
+                        }                  
+                    }
+                    else
+                    {
+                        tempLink = tempLink.NextLink;
+                    }
+                    
+                    
+                    
                 }
             }
         }
-        
+
+        public void InsertOrder2(int newItem)
+        {
+            for (Link targetLink = list; targetLink != null ;targetLink = targetLink.NextLink)
+            {
+                Link highestVal = null;
+
+                for (Link rangeSelected = targetLink.NextLink; rangeSelected != null; rangeSelected = rangeSelected.NextLink)
+                {
+                    if (targetLink.Value < rangeSelected.Value)
+                    {
+                        if (highestVal == null || highestVal.Value < rangeSelected.Value)
+                        {
+                            highestVal = rangeSelected;                            
+                        }
+                    }
+                }
+
+                if (highestVal != null)
+                {
+                    int tempInt = targetLink.Value;
+
+                    targetLink.Value = highestVal.Value;
+                    highestVal.Value = tempInt;
+                }
+
+                
+            }
+
+            
+        }
+
         public int CalcLength()
         {
             Link tempLink = list;
