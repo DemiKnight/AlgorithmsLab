@@ -3,7 +3,9 @@
   &lt;Assembly Path="/home/alexk/.nuget/packages/microsoft.netcore.app/2.2.0/ref/netcoreapp2.2/System.Runtime.dll" /&gt;
 &lt;/AssemblyExplorer&gt;</s:String>
 	<s:Boolean x:Key="/Default/UnloadedProject/UnloadedProjects/=0b3b40af_002D3fef_002D44b3_002D8b42_002D7c3584db5993_0023TestingArea/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UnloadedProject/UnloadedProjects/=15e1640f_002D8f1f_002D46d8_002Db3d5_002Db53fc85db046_0023L6_002DEx2/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UnloadedProject/UnloadedProjects/=1a817a56_002D1a9d_002D4ff1_002D96ff_002D03b5834ebc18_0023L4_002DEx1/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UnloadedProject/UnloadedProjects/=371b073a_002Dd719_002D4d4d_002Db2f4_002D19e8bf49cde6_0023L6_002DEx1/@EntryIndexedValue">True</s:Boolean>
 	
 	
 	<s:Boolean x:Key="/Default/UnloadedProject/UnloadedProjects/=4f7052d8_002D8ed4_002D4016_002Db01f_002D36ddfe349f8f_0023L3_002DEx3/@EntryIndexedValue">True</s:Boolean>

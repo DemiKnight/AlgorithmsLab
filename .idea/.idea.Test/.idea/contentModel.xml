@@ -43,12 +43,20 @@
       </e>
       <e p="L6-Ex1" t="IncludeRecursive">
         <e p="L6-Ex1.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="L6-Ex2" t="IncludeRecursive">
+        <e p="L6-Ex2.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="L6-Ex3" t="IncludeRecursive">
+        <e p="Book.cs" t="Include" />
+        <e p="BookManager.cs" t="Include" />
+        <e p="L6-Ex3.csproj" t="IncludeRecursive" />
         <e p="Program.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
-              <e p="L6-Ex1.AssemblyInfo.cs" t="Include" />
+              <e p="L6-Ex3.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
