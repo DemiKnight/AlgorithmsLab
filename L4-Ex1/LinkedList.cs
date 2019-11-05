@@ -4,7 +4,7 @@ using System.Text;
 
 namespace L4_Ex1
 {
-    public class LinkedList
+    public class LinkedList 
     {
         private Link list = null;
         
@@ -50,14 +50,7 @@ namespace L4_Ex1
             
             return false;
         }
-
-
-        public void Remove2()
-        {
-//            Link mainIterator = list;
-//            Link 
-            
-        }
+        
 
         public void RemoveItem(int item)
         {
@@ -112,57 +105,8 @@ namespace L4_Ex1
             list = list.NextLink;
             numberOfItems--;
         }
-
-
-        public void InsertInOrder(int item)
-        {
-            numberOfItems++;
-            Link newList = new Link(list.Value, new Link(list.NextLink.Value));
-            list = list.NextLink.NextLink;
-            
-            for (int index = 0; index < numberOfItems ; index++)
-            {
-                bool Nend = true;
-                bool found = false;
-                
-                Link tempLink = newList;
-                
-                while (Nend)
-                {
-                    
-
-                    if (!found)
-                    {
-                        if (tempLink.NextLink == null)
-                        {
-                            tempLink.NextLink = new Link(item);
-                            Nend = false;
-                        }else if (tempLink.Value == item)
-                        {
-                            tempLink.NextLink = new Link(item, tempLink.NextLink);
-                            found = true;
-                        } else if (tempLink.Value < item)
-                        {
-                            tempLink.NextLink = new Link(item, tempLink.NextLink);
-                            found = true;
-                        }else /*if (tempLink.Value > item)*/
-                        {
-                            //Matched none of the citeria
-                            tempLink = tempLink.NextLink;
-                        }                  
-                    }
-                    else
-                    {
-                        tempLink = tempLink.NextLink;
-                    }
-                    
-                    
-                    
-                }
-            }
-        }
-
-        public void InsertOrder2(int newItem)
+        
+        public void Sort()
         {
             for (Link targetLink = list; targetLink != null ;targetLink = targetLink.NextLink)
             {
@@ -186,11 +130,21 @@ namespace L4_Ex1
                     targetLink.Value = highestVal.Value;
                     highestVal.Value = tempInt;
                 }
-
-                
             }
+        }
+        
+        public void InsertOrder(int newItem)
+        {
+            Sort();
 
-            
+            for (Link target = list; target != null; target = target.NextLink)
+            {
+                if (target.Value > newItem && target.NextLink.Value < newItem)
+                {
+                    Link oldLink = target.NextLink;
+                    target.NextLink = new Link(newItem, oldLink);
+                }
+            }
         }
 
         public int CalcLength()
@@ -206,8 +160,37 @@ namespace L4_Ex1
             return numOfItems;
         }
 
-        public void RemoveIndex(int index)
+        public void AppendItem(int index)
         {
+            for (Link selectLink = list; selectLink == null; selectLink = selectLink.NextLink)
+            {
+                if (selectLink.NextLink == null)
+                    selectLink.NextLink = new Link(index);
+                
+            }
+        }
+        
+        public void Concat(LinkedList newList)
+        {
+            bool finished = true;
+            for (Link selectLink = list; selectLink != null && finished; selectLink = selectLink.NextLink)
+            {
+                if (selectLink.NextLink == null)
+                {
+                    selectLink.NextLink = newList.list;
+                    finished = false;
+                }
+            }
+
+            numberOfItems += newList.Length;
+        }
+        
+        public void Copy(ref LinkedList newList)
+        {
+            for (Link selectLink = list; selectLink != null; selectLink = selectLink.NextLink)
+            {
+                newList.addValue(selectLink.Value);
+            }
             
         }
         

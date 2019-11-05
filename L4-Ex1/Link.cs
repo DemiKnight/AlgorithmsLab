@@ -1,6 +1,8 @@
+using System;
+
 namespace L4_Ex1
 {
-    public class Link
+    public class Link : IComparable
     {
         private int data;
         private Link nextLink;
@@ -27,6 +29,21 @@ namespace L4_Ex1
         {
             get => nextLink;
             set => nextLink = value;
+        }
+
+        public int CompareTo(object obj)
+        {
+            if (obj == null) return -1;
+
+            Link tempObj = obj as Link;
+
+            
+            if (data == tempObj.data)
+            {
+                return 0;
+            }
+
+            return -2;
         }
     }
 }

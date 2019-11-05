@@ -7,15 +7,40 @@ namespace L5_Ex1
     {
         static void Main(string[] args)
         {
-            LinkList<string> StrList = new LinkList<string>( new string[]{"str1", "str2", "str3"} );
+            LinkedList mainList = new LinkedList();
 
-            StrList.DisplayList();
+            LinkedList copyList = new LinkedList();
             
-            StrList.addItem("str4");
+            LinkedList concatList = new LinkedList(); 
             
-            LinkedList<>
+            mainList.addValue(3);
+            mainList.addValue(4);
+            mainList.addValue(1);
+            mainList.addValue(2);
+            mainList.addValue(24);
+            mainList.addValue(5);
+            mainList.addValue(33);
             
-            StrList.DisplayList();
+            concatList.addValue(14);
+            concatList.addValue(74);
+            concatList.addValue(9);
+            
+            
+            Console.WriteLine(mainList.ToString());
+            
+            mainList.InsertOrder(15);
+            
+            mainList.Concat(concatList);
+            
+            mainList.Copy(ref copyList);
+
+            Console.WriteLine("Is 2 present? {0}", mainList.IsPresentItem(24));
+            
+            mainList.RemoveItem(5);
+
+            mainList.Sort();
+
+            Console.WriteLine(mainList.ToString());
         }
     }
 }

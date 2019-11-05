@@ -37,38 +37,28 @@
       </e>
       <e p="L4-Ex1" t="IncludeRecursive">
         <e p="L4-Ex1.csproj" t="IncludeRecursive" />
-        <e p="L4-Ex1.csproj.DotSettings" t="Include" />
-        <e p="Link.cs" t="Include" />
-        <e p="LinkedList.cs" t="Include" />
+      </e>
+      <e p="L5-Ex1" t="IncludeRecursive">
+        <e p="L5-Ex1.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="L6-Ex1" t="IncludeRecursive">
+        <e p="L6-Ex1.csproj" t="IncludeRecursive" />
         <e p="Program.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
-              <e p="L4-Ex1.AssemblyInfo.cs" t="Include" />
+              <e p="L6-Ex1.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
-      </e>
-      <e p="L5-Ex1" t="IncludeRecursive">
-        <e p="L5-Ex1.csproj" t="IncludeRecursive" />
       </e>
       <e p="Test" t="IncludeRecursive">
         <e p="L1-Ex1.csproj" t="IncludeRecursive" />
       </e>
       <e p="Test.sln" t="IncludeFlat" />
       <e p="TestingArea" t="IncludeRecursive">
-        <e p="ArrayStuff.cs" t="Include" />
-        <e p="Program.cs" t="Include" />
         <e p="TestingArea.csproj" t="IncludeRecursive" />
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
-            <e p="netcoreapp2.2" t="Include">
-              <e p="TestingArea.AssemblyInfo.cs" t="Include" />
-            </e>
-          </e>
-        </e>
       </e>
       <e p="packages" t="ExcludeRecursive" />
     </e>

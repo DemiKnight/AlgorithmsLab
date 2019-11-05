@@ -1,64 +1,51 @@
 using System;
 using System.Collections.Generic;
 
+
 namespace L5_Ex1
 {
-    public class Link <T>  where T:IComparable
+    public class Link <Type>  where Type:IComparable
     {
-        private T data;
-        private Link<T> nextLink = null;
+        private Type data;
+        private Link<Type> nextLink;
 
-        public Link(T newData)
+
+        public Link(Type newItem)
         {
-            data = newData;
+            data = newItem;
         }
 
-        public Link(T newData, Link<T> newLink)
+        public Link(Type newItem, Link<Type> newLink)
         {
-            data = newData;
+            data = newItem;
             nextLink = newLink;
         }
 
-        public T Data
+        public Type Value
         {
             get => data;
             set => data = value;
         }
 
-        public Link<T> NextLink
+        public Link<Type> NextLink
         {
             get => nextLink;
             set => nextLink = value;
         }
 
-//        public int CompareTo<Type>(Link<Type> compareObj)
-//        {
-////            Link<T> testObj = (Link<Type>) compareObj;
-//            
-//            if (compareObj.Data == this.data) return -1;
-////            Link<TempT> tempLink = obj as Link<T>;
-////            Link<T> tempLink = compareObj as Link<T>;
-//
-//            if (testObj.Data == this.Data)
-//            {
-//                
-//            }
-//            
-//        }
-
-
-        public int CompareTo(Link<T> other)
+        public int CompareTo(object obj)
         {
-            if (other == null) return -1;
+            if (obj == null) return -1;
 
-            Link<T> test = other as Link<T>;
+            Link<Type> tempObj = obj as Link<Type>;
+
             
-            if (this.data.CompareTo(other.Data) == 0)
+            if (data.Equals(tempObj.data))
             {
-                
+                return 0;
             }
-            
-            
+
+            return -2;
         }
     }
 }

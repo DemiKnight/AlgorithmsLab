@@ -3,108 +3,201 @@ using System.Text;
 
 namespace L5_Ex1
 {
-    public class LinkList <T> where T:IComparable
+    public class LinkList<Type> where Type : IComparable
     {
-        private Link<T> mainList = null;
-        private uint numberOfItems;
+        private Link<Type> list = null;
         
-        public LinkList(T newData)
+        //TODO Explore whether using a while(list.NextLink == null) would be quicker.
+        private int numberOfItems = 0;
+        
+        public void addValue(Type newInt)
         {
-            mainList = new Link<T>(newData);
             numberOfItems++;
+            list = new Link<Type>(newInt, list);            
         }
 
-        public LinkList(T[] newData)
-        {
-            Link<T> lastLink = null;
-            foreach (T selectData in newData)
-            {
-                Link<T> newLink = new Link<T>(selectData);
 
-                if (lastLink == null)
+        public override string ToString()
+        {
+            StringBuilder output = new StringBuilder();
+            Link<Type> tempLink = list;
+            
+            
+            output.Append("[");
+            for (int index = 0; index < numberOfItems; index++)
+            {
+                output.Append(tempLink.Value + ",");
+                tempLink = tempLink.NextLink;
+            }
+            
+            
+            output.Append("]");
+            
+            
+            return output.ToString();
+        }
+        
+        public bool IsPresentItem(Type item)
+        {
+            Link<Type> tempLIst = list;
+            for (int index = 0; index < numberOfItems; index++)
+            {
+                if (tempLIst.Value.CompareTo(item) == 0) return true;
+
+                tempLIst = tempLIst.NextLink;
+            }
+            
+            return false;
+        }
+        
+
+        public void RemoveItem(Type item)
+        {
+            //Remove all first instances of the item, if needed
+            if (item.CompareTo(list.Value) == 0)
+                do
                 {
-                    mainList = newLink;
-                    lastLink = newLink;
+                    RemoveFirst();
+                } while (list.Value.CompareTo(list.Value) == 0);
+            
+            //Due to RemoveFirst() mutating list, it needs to be called first.
+            Link<Type> tempLink = list; //Remove and just use list
+            Link<Type> previous = tempLink;
+
+            /*do
+            {
+                if (tempLink.Value == item)
+                {
+                    previous.NextLink = tempLink.NextLink;
+                    numberOfItems--;
                 }
                 else
                 {
-                    lastLink.NextLink = newLink;
-                    lastLink = newLink;
+                    previous = tempLink;
                 }
-                
-                numberOfItems++;
-            }
-        }
-        
 
-        public void addItem(T newData)
-        {
-            Link<T> tempLink = mainList;
+                tempLink = previous;
+                tempLink = tempLink.NextLink;                
+                
+            } while (tempLink.NextLink != null);*/
+            
+//            for (Link index = tempLink; index.NextLink != null; index = index.NextLink)
             for (int index = 0; index < numberOfItems; index++)
             {
-                if (tempLink.NextLink == null)
+                if (tempLink.Value.CompareTo(item) == 0)
                 {
-                    tempLink.NextLink = new Link<T>(newData);
+                    previous.NextLink = tempLink.NextLink;
+                    numberOfItems--;
                 }
-                else tempLink = tempLink.NextLink;
-                
-            }
-            numberOfItems++;
-        }
+                else
+                {
+                    previous = tempLink;
+                }
 
-        public string DisplayList()
-        {
-            StringBuilder strReturn = new StringBuilder();
-
-            for (
-                Link<T> selectedLink = mainList; 
-                selectedLink != null; 
-                selectedLink = selectedLink.NextLink)
-            {
-                Console.WriteLine(selectedLink.Data.ToString());
-                
-            }
-            
-            return strReturn.ToString();
-        }
-
-        public uint Length => numberOfItems;
-
-        public bool IsPresentItem(T item)
-        {
-            for (
-                Link<T> selectedLink = mainList; 
-                selectedLink != null; 
-                selectedLink = selectedLink.NextLink)
-            {
-                Console.WriteLine(selectedLink.Data.ToString());
-                                
-            }
-
-            return false;
-        }
-
-        public void RemoveItem(T Item)
-        {
-            if (mainList.CompareTo(Item) == 0)
-            {
-                
+                tempLink = previous;
+                tempLink = tempLink.NextLink;
             }
         }
 
         public void RemoveFirst()
         {
-            if (mainList.NextLink == null)
-            {
-                mainList = null;
-            }
-            else
-            {
-                mainList = mainList.NextLink;
-            }
-
+            list = list.NextLink;
             numberOfItems--;
         }
+        
+        public void Sort()
+        {
+            for (Link<Type> targetLink = list; targetLink != null ;targetLink = targetLink.NextLink)
+            {
+                Link<Type> highestVal = null;
 
+                for (Link<Type> rangeSelected = targetLink.NextLink; rangeSelected != null; rangeSelected = rangeSelected.NextLink)
+                {
+                    if (targetLink.Value < rangeSelected.Value)
+                    {
+                        if (highestVal == null || highestVal.Value < rangeSelected.Value)
+                        {
+                            highestVal = rangeSelected;                            
+                        }
+                    }
+                }
+
+                if (highestVal != null)
+                {
+                    int tempInt = targetLink.Value;
+
+                    targetLink.Value = highestVal.Value;
+                    highestVal.Value = tempInt;
+                }
+            }
+        }
+        
+        public void InsertOrder(int newItem)
+        {
+            Sort();
+
+            for (Link<Type> target = list; target != null; target = target.NextLink)
+            {
+                if (target.Value > newItem && target.NextLink.Value < newItem)
+                {
+                    Link<Type> oldLink = target.NextLink;
+                    target.NextLink = new Link<Type>(newItem, oldLink);
+                }
+            }
+        }
+
+        public int CalcLength()
+        {
+            Link<Type> tempLink = list;
+            int numOfItems = 0;
+            while (tempLink.NextLink != null)
+            {
+                numOfItems++;
+                tempLink = tempLink.NextLink;
+            }
+
+            return numOfItems;
+        }
+
+        public void AppendItem(int index)
+        {
+            for (Link<Type> selectLink = list; selectLink == null; selectLink = selectLink.NextLink)
+            {
+                if (selectLink.NextLink == null)
+                    selectLink.NextLink = new Link<Type>(index);
+                
+            }
+        }
+        
+        public void Concat(LinkList<Type> newList)
+        {
+            bool finished = true;
+            for (Link<Type> selectLink = list; selectLink != null && finished; selectLink = selectLink.NextLink)
+            {
+                if (selectLink.NextLink == null)
+                {
+                    selectLink.NextLink = newList.list;
+                    finished = false;
+                }
+            }
+
+            numberOfItems += newList.Length;
+        }
+        
+        public void Copy(ref LinkList<Type> newList)
+        {
+            for (Link<Type> selectLink = list; selectLink != null; selectLink = selectLink.NextLink)
+            {
+                newList.addValue(selectLink.Value);
+            }
+            
+        }
+        
+        public int Length => numberOfItems;
+
+        public Link<Type> getBase
+        {
+            get => list;
+        }
     }
 }

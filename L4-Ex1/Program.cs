@@ -6,10 +6,12 @@ namespace L4_Ex1
     {
         static void Main(string[] args)
         {
-//            Console.WriteLine("Hello World!");
-            
             LinkedList mainList = new LinkedList();
 
+            LinkedList copyList = new LinkedList();
+            
+            LinkedList concatList = new LinkedList(); 
+            
             mainList.addValue(3);
             mainList.addValue(4);
             mainList.addValue(1);
@@ -17,24 +19,27 @@ namespace L4_Ex1
             mainList.addValue(24);
             mainList.addValue(5);
             mainList.addValue(33);
+            
+            concatList.addValue(14);
+            concatList.addValue(74);
+            concatList.addValue(9);
+            
+            
+            Console.WriteLine(mainList.ToString());
+            
+            mainList.InsertOrder(15);
+            
+            mainList.Concat(concatList);
+            
+            mainList.Copy(ref copyList);
 
+            Console.WriteLine("Is 2 present? {0}", mainList.IsPresentItem(24));
+            
+            mainList.RemoveItem(5);
 
-            mainList.InsertOrder2(15);
+            mainList.Sort();
 
-//            Link testLink = new Link(1, 
-//                new Link(2, new Link(3)));
-
-//            Console.WriteLine(mainList.ToString());
-//            mainList.RemoveItem(1);
-//            mainList.RemoveFirst();
-
-//            mainList.InsertInOrder(6);    
-
-//            Console.WriteLine(mainList.ToString());
-//            Console.WriteLine(mainList.ToString());
-
-
-
+            Console.WriteLine(mainList.ToString());
 
         }
     }
