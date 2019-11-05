@@ -35,14 +35,23 @@ namespace L5_Ex1
 
         public int CompareTo(object obj)
         {
-            if (obj == null) return -1;
+            if (obj == null) return -2;
 
             Link<Type> tempObj = obj as Link<Type>;
 
+            if (data.CompareTo(tempObj.data) < 0)
+            {
+                return -1;
+            }
             
             if (data.Equals(tempObj.data))
             {
                 return 0;
+            }
+            
+            if (data.CompareTo(tempObj.Value) > 0)
+            {
+                return 1;
             }
 
             return -2;

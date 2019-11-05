@@ -1,5 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
+//using System.Collections.Generic;
+//using System.Linq;
+
+//using System.Collections.Generic;
 
 namespace L5_Ex1
 {
@@ -7,11 +10,11 @@ namespace L5_Ex1
     {
         static void Main(string[] args)
         {
-            LinkedList mainList = new LinkedList();
+            LinkList<int> mainList = new LinkList<int>();
 
-            LinkedList copyList = new LinkedList();
+            LinkList<int> copyList = new LinkList<int>();
             
-            LinkedList concatList = new LinkedList(); 
+            LinkList<int> concatList = new LinkList<int>(); 
             
             mainList.addValue(3);
             mainList.addValue(4);

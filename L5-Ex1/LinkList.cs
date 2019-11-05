@@ -113,9 +113,9 @@ namespace L5_Ex1
 
                 for (Link<Type> rangeSelected = targetLink.NextLink; rangeSelected != null; rangeSelected = rangeSelected.NextLink)
                 {
-                    if (targetLink.Value < rangeSelected.Value)
+                    if (targetLink.Value.CompareTo(rangeSelected.Value) == -1)
                     {
-                        if (highestVal == null || highestVal.Value < rangeSelected.Value)
+                        if (highestVal == null || highestVal.Value.CompareTo(rangeSelected.Value) == -1)
                         {
                             highestVal = rangeSelected;                            
                         }
@@ -124,7 +124,7 @@ namespace L5_Ex1
 
                 if (highestVal != null)
                 {
-                    int tempInt = targetLink.Value;
+                    Type tempInt = targetLink.Value;
 
                     targetLink.Value = highestVal.Value;
                     highestVal.Value = tempInt;
@@ -132,13 +132,13 @@ namespace L5_Ex1
             }
         }
         
-        public void InsertOrder(int newItem)
+        public void InsertOrder(Type newItem)
         {
             Sort();
 
             for (Link<Type> target = list; target != null; target = target.NextLink)
             {
-                if (target.Value > newItem && target.NextLink.Value < newItem)
+                if (target.Value.CompareTo(newItem) == 1 && target.NextLink.Value.CompareTo(newItem) == 1)
                 {
                     Link<Type> oldLink = target.NextLink;
                     target.NextLink = new Link<Type>(newItem, oldLink);
@@ -159,7 +159,7 @@ namespace L5_Ex1
             return numOfItems;
         }
 
-        public void AppendItem(int index)
+        public void AppendItem(Type index)
         {
             for (Link<Type> selectLink = list; selectLink == null; selectLink = selectLink.NextLink)
             {
