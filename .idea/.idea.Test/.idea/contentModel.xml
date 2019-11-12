@@ -74,6 +74,18 @@
           </e>
         </e>
       </e>
+      <e p="L7-Ex1" t="IncludeRecursive">
+        <e p="L7-Ex1.csproj" t="IncludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.2" t="Include">
+              <e p="L7-Ex1.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
       <e p="Test" t="IncludeRecursive">
         <e p="L1-Ex1.csproj" t="IncludeRecursive" />
       </e>
