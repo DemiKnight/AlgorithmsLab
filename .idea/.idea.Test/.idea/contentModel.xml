@@ -48,6 +48,7 @@
         <e p="L6-Ex2.csproj" t="IncludeRecursive" />
       </e>
       <e p="L6-Ex3" t="IncludeRecursive">
+        <e p="App.cs" t="Include" />
         <e p="Book.cs" t="Include" />
         <e p="BookManager.cs" t="Include" />
         <e p="L6-Ex3.csproj" t="IncludeRecursive" />
@@ -57,6 +58,18 @@
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
               <e p="L6-Ex3.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="L6-Ex4" t="IncludeRecursive">
+        <e p="L6-Ex4.csproj" t="IncludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.2" t="Include">
+              <e p="L6-Ex4.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
