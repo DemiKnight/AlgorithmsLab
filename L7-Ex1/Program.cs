@@ -7,7 +7,7 @@ namespace L7_Ex1
         static void Main(string[] args)
         {
             printNumbers(5);
-            Console.ReadLine();
+//            Console.ReadLine();
         }
         
         static void printNumbers(int n)
@@ -17,6 +17,10 @@ namespace L7_Ex1
                 Console.WriteLine(" n = {0} ", n);
                 printNumbers ( n - 1 );
             }
+            Console.WriteLine("{0} Recursive Unfolding ", n);
+            
+            // 6 times called.
+            // All function spaces are cleared.
         }
     }
 }

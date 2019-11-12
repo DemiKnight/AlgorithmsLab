@@ -85,7 +85,9 @@ namespace L6_Ex3
             List<Book> tempList = new List<Book>();
 
             foreach (KeyValuePair<string, Book> selectedBOok in bookStore)
-                if(selectedBOok.Key.Contains(bookSubstring, StringComparison.OrdinalIgnoreCase) || selectedBOok.Value.Isbn.Contains(bookSubstring, StringComparison.OrdinalIgnoreCase)) tempList.Add(selectedBOok.Value);
+                if(
+                    selectedBOok.Key.Contains(bookSubstring, StringComparison.OrdinalIgnoreCase) || 
+                    selectedBOok.Value.Isbn.Contains(bookSubstring, StringComparison.OrdinalIgnoreCase)) tempList.Add(selectedBOok.Value);
 
             return tempList.ToArray();
         }

@@ -64,24 +64,54 @@
       </e>
       <e p="L6-Ex4" t="IncludeRecursive">
         <e p="L6-Ex4.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="L7-Ex1" t="IncludeRecursive">
+        <e p="L7-Ex1.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="L7-Ex3" t="IncludeRecursive">
+        <e p="L7-Ex3.csproj" t="IncludeRecursive" />
         <e p="Program.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
-              <e p="L6-Ex4.AssemblyInfo.cs" t="Include" />
+              <e p="L7-Ex3.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
       </e>
-      <e p="L7-Ex1" t="IncludeRecursive">
-        <e p="L7-Ex1.csproj" t="IncludeRecursive" />
+      <e p="L7-Ex4" t="IncludeRecursive">
+        <e p="L7-Ex4.csproj" t="IncludeRecursive" />
         <e p="Program.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
-              <e p="L7-Ex1.AssemblyInfo.cs" t="Include" />
+              <e p="L7-Ex4.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="L7-Ex5" t="IncludeRecursive">
+        <e p="L7-Ex5.csproj" t="IncludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.2" t="Include">
+              <e p="L7-Ex5.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="L7-Ex8" t="IncludeRecursive">
+        <e p="L7-Ex8.csproj" t="IncludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.2" t="Include">
+              <e p="L7-Ex8.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
