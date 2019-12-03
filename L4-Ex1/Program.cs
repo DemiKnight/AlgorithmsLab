@@ -5,7 +5,7 @@ namespace L4_Ex1
     class Program
     {
         static void Main(string[] args)
-        {
+        {   
             LinkedList mainList = new LinkedList();
 
             LinkedList copyList = new LinkedList();

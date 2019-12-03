@@ -23,6 +23,19 @@
       <e p="L1-Ex7" t="IncludeRecursive">
         <e p="L1-Ex7.csproj" t="IncludeRecursive" />
       </e>
+      <e p="L10-Ex1" t="IncludeRecursive">
+        <e p="BSTree.cs" t="Include" />
+        <e p="L10-Ex1.csproj" t="IncludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.2" t="Include">
+              <e p="L10-Ex1.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
       <e p="L2-Ex1" t="IncludeRecursive">
         <e p="L2-Ex1.csproj" t="IncludeRecursive" />
       </e>
@@ -37,6 +50,18 @@
       </e>
       <e p="L4-Ex1" t="IncludeRecursive">
         <e p="L4-Ex1.csproj" t="IncludeRecursive" />
+        <e p="L4-Ex1.csproj.DotSettings" t="Include" />
+        <e p="Link.cs" t="Include" />
+        <e p="LinkedList.cs" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.2" t="Include">
+              <e p="L4-Ex1.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
       </e>
       <e p="L5-Ex1" t="IncludeRecursive">
         <e p="L5-Ex1.csproj" t="IncludeRecursive" />
@@ -64,33 +89,24 @@
       </e>
       <e p="L6-Ex4" t="IncludeRecursive">
         <e p="L6-Ex4.csproj" t="IncludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.2" t="Include">
+              <e p="L6-Ex4.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
       </e>
       <e p="L7-Ex1" t="IncludeRecursive">
         <e p="L7-Ex1.csproj" t="IncludeRecursive" />
       </e>
       <e p="L7-Ex3" t="IncludeRecursive">
         <e p="L7-Ex3.csproj" t="IncludeRecursive" />
-        <e p="Program.cs" t="Include" />
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
-            <e p="netcoreapp2.2" t="Include">
-              <e p="L7-Ex3.AssemblyInfo.cs" t="Include" />
-            </e>
-          </e>
-        </e>
       </e>
       <e p="L7-Ex4" t="IncludeRecursive">
         <e p="L7-Ex4.csproj" t="IncludeRecursive" />
-        <e p="Program.cs" t="Include" />
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
-            <e p="netcoreapp2.2" t="Include">
-              <e p="L7-Ex4.AssemblyInfo.cs" t="Include" />
-            </e>
-          </e>
-        </e>
       </e>
       <e p="L7-Ex5" t="IncludeRecursive">
         <e p="L7-Ex5.csproj" t="IncludeRecursive" />
@@ -116,6 +132,25 @@
           </e>
         </e>
       </e>
+      <e p="L8-Ex1" t="IncludeRecursive">
+        <e p="BinaryTree.cs" t="Include" />
+        <e p="GetOrder.cs" t="Include" />
+        <e p="L8-Ex1.csproj" t="IncludeRecursive" />
+        <e p="L8-Ex1.csproj.DotSettings" t="Include" />
+        <e p="Node.cs" t="Include" />
+        <e p="NodeDataInput.cs" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Sides.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.2" t="Include">
+              <e p="L8-Ex1.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Term1" t="Include" />
       <e p="Test" t="IncludeRecursive">
         <e p="L1-Ex1.csproj" t="IncludeRecursive" />
       </e>
