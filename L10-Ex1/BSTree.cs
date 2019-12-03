@@ -96,11 +96,35 @@ namespace L10
 
         protected void RemoveItem(T item, ref Node<T> nodeToChange)
         {
-            if (nodeToChange.Data.Equals(item))
+            if (nodeToChange != null)
             {
+                //TODO Check if result is == 0. first tree.
+                int result = nodeToChange.Data.CompareTo(item);
+                
+                Node<T> nodeTemp = (result < 0 && result != 0 ? nodeToChange.Left : nodeToChange.Right);
+                
+                if ()
+                {
+                    
+                }
+                
                 
             }
+        }
 
+        protected void findSmallest(ref T smallestSoFar, ref Node<T> selectNode)
+        {
+            if (selectNode.Data.CompareTo(smallestSoFar) < 0) smallestSoFar = selectNode.Data;
+
+            if (selectNode.Left != null)
+            {
+                findSmallest(ref smallestSoFar, ref selectNode.Left);
+            }
+
+            if (selectNode.Right != null)
+            {
+                findSmallest(ref smallestSoFar, ref selectNode.Right);
+            }
         }
 
         public uint Count

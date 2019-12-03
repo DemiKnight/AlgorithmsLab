@@ -19,8 +19,11 @@ namespace L10
             testTree.GetTree(ref outputStr, GetOrder.InOrder);
             Console.WriteLine(outputStr);
             Console.WriteLine(testTree.CalcHeight());
-            Console.WriteLine(testTree.CalcCount()); 
+            Console.WriteLine(testTree.CalcCount());
             Console.WriteLine(testTree.Contains(5));
+
+            testTree.RemoveItem(2);
+            Console.WriteLine(outputStr);
         }
     }
 }
