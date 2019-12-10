@@ -13,11 +13,18 @@ namespace L6_BookM
         BookManager bookManager = new BookManager();
 
         private Book result = null;
+        private Boolean SearchingWithName = true;
+        private Boolean IsAdding = false;
 //        ref Book test = null;
 
         public MainWindow()
         {
             InitializeComponent();
+
+            foreach (Book selectBook in bookManager.getBooks())
+            {
+                ListVewBox.Items.Add(selectBook);
+            }
 
         }
 
@@ -35,54 +42,140 @@ namespace L6_BookM
         }
 
 
-        private void updateDetailsPane(ref Book toUpdate)
+        private void updateDetailsPane(Book toUpdate)
         {
+            //TODO Can change later, to only update the changes.
+
+
+
             checkBoxOnLoan.IsChecked = toUpdate.OnLoan;
             TextBoxAltDetails.Text = toUpdate.Isbn;
             TextBoxSearch.Text = toUpdate.Name;
 
         }
 
-        private void TextBoxSearch_TextChanged(object sender, TextChangedEventArgs e)
+        private void updateList(String returnStr)
         {
+            int returnVal = 0;
+            // if (int.TryParse(returnStr, out returnVal) == false) SearchingWithName = true;
+
+            SearchingWithName = ! int.TryParse(returnStr, out returnVal);
+
             ListVewBox.Items.Clear();
 
-            foreach (Book selectBook in bookManager.searchBooks(((TextBox)sender).Text))
+            foreach (Book selectBook in bookManager.searchBooks(returnStr))
             {
                 ListVewBox.Items.Add(selectBook);
             }
+        }
 
-            if (ListVewBox.Items.Count == 1)
+
+        private void updateState()
+        {
+            if(result != null)
             {
-                toggleFound();
+                checkBoxOnLoan.IsEnabled = true;
+                checkBoxOnLoan.IsChecked = result.OnLoan;
 
-                result = bookManager.searchBooks(TextBoxSearch.Text)[0];
+                TextBoxAltDetails.IsEnabled = false;
+                TextBoxAltDetails.Text = result.Isbn;
 
-//                updateDetailsPane(ref bookManager.searchBooks(TextBoxSearch.Text)[0]);
+                ButtonAddRemoveB.IsEnabled = true;
+                ButtonAddRemoveB.Content = "Remove";
+
             }
             else
             {
-                toggleFound();
+                checkBoxOnLoan.IsEnabled = false;
+                checkBoxOnLoan.IsChecked = false;
+                TextBoxAltDetails.IsEnabled = false;
+                TextBoxAltDetails.Text = "";
+
+                LabelNameOrISBN.Content = "Name or ISBN";
+                LabelAltDetailsIndicator.Content = "";
+            }
+
+            if (SearchingWithName == true)
+            {
+                LabelNameOrISBN.Content = "Name";
+                LabelAltDetailsIndicator.Content = "ISBN";
+            }
+            else
+            {
+                LabelNameOrISBN.Content = "ISBN";
+               
+                LabelAltDetailsIndicator.Content = "Name";
+            }
+
+            if(IsAdding == true)
+            {
+                ButtonAddRemoveB.IsEnabled = true;
+                TextBoxAltDetails.IsEnabled = true;
+                ButtonAddRemoveB.Content = "Add";
+            } else if (IsAdding == false)
+            {
+                ButtonAddRemoveB.IsEnabled = true;
+                TextBoxAltDetails.IsEnabled = false;
+                ButtonAddRemoveB.Content = "Remove";
+            }
+            else
+            {
+                ButtonAddRemoveB.IsEnabled = false;
+                TextBoxAltDetails.IsEnabled = false;
+                ButtonAddRemoveB.Content = "";
+            }
+        }
+
+        private void TextBoxSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            updateList(((TextBox) sender).Text);
+            
+            if (ListVewBox.Items.Count == 1)
+            {
+                // toggleFound();
+
+                result = bookManager.searchBooks(TextBoxSearch.Text)[0];
+                TextBoxAltDetails.Text = result.Isbn;
+                checkBoxOnLoan.IsChecked = result.OnLoan;
+                //ButtonAddRemoveB.IsEnabled = true;
+                //ButtonAddRemoveB.Content = "Remove";
+
+            } else if (ListVewBox.Items.Count == 0)
+            {
+                result = null;
+                //ButtonAddRemoveB.IsEnabled = true;
+                //ButtonAddRemoveB.Content = "Add";
             }
         }
 
         private void checkBoxOnLoan_Checked(object sender, RoutedEventArgs e)
         {
-
+            if(result != null)
+            {
+                result.OnLoan = (((CheckBox)sender).IsChecked == true ? true : false);
+            }
         }
 
         private void ListVewBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (e.AddedItems.Count != 0)
             {
-                toggleFound();
-                updateDetailsPane(ref bookManager.searchBooks(e.AddedItems[0].ToString())[0]);
+                Console.WriteLine(((Book) e.AddedItems[0]).Name);
+                updateDetailsPane((Book) e.AddedItems[0]);
+                result = ((Book)e.AddedItems[0]);
 
-                Console.WriteLine(e.AddedItems[0].ToString());
+            }
+        }
+
+        private void ButtonAddRemoveB_Click(object sender, RoutedEventArgs e)
+        {
+            if(result == null)
+            {
+                bookManager.addBook(new Book(TextBoxAltDetails.Text, TextBoxSearch.Text));
             }
             else
             {
-                toggleFound();
+                bookManager.removeBook(bookManager.searchBooks(TextBoxSearch.Text)[0]);
             }
         }
     }

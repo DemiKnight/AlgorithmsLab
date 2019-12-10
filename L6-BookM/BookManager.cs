@@ -11,7 +11,7 @@ namespace L6_Ex3
 
         public BookManager() 
         {
-            bookStore.Add("Bible", new Book(9780007259762.ToString(), "Holy Bible: King James Version"));
+            bookStore.Add("Holy Bible: King James Version", new Book(9780007259762.ToString(), "Holy Bible: King James Version"));
             bookStore.Add("War and Peace", new Book(9780199232765.ToString(), "War and Peace"));
             bookStore.Add("The Odyssey", new Book(9780140449112.ToString(), "The Odyssey"));
         }
@@ -91,10 +91,12 @@ namespace L6_Ex3
             List<Book> tempList = new List<Book>();
 
             foreach (KeyValuePair<string, Book> selectedBOok in bookStore)
-                if(
-                    selectedBOok.Key.Contains(bookSubstring) || 
+            {
+                if (
+                    selectedBOok.Key.Contains(bookSubstring) ||
                     selectedBOok.Value.Isbn.Contains(bookSubstring)) tempList.Add(selectedBOok.Value);
-
+            }
+            
             return tempList.ToArray();
         }
         
@@ -107,8 +109,7 @@ namespace L6_Ex3
             
             return tempList.ToArray();
         }
-         
-        
-        
+
+
     }
 }
