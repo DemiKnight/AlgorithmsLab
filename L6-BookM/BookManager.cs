@@ -9,6 +9,12 @@ namespace L6_Ex3
     {
         Dictionary<string, Book> bookStore = new Dictionary<string, Book>();
 
+        public BookManager() 
+        {
+            bookStore.Add("Bible", new Book(9780007259762.ToString(), "Holy Bible: King James Version"));
+            bookStore.Add("War and Peace", new Book(9780199232765.ToString(), "War and Peace"));
+            bookStore.Add("The Odyssey", new Book(9780140449112.ToString(), "The Odyssey"));
+        }
 
         public void addBook(Book newBook)
         {

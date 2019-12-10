@@ -103,10 +103,10 @@ namespace L10
                 
                 Node<T> nodeTemp = (result < 0 && result != 0 ? nodeToChange.Left : nodeToChange.Right);
                 
-                if ()
-                {
-                    
-                }
+//                if ()
+//                {
+//                    
+//                }
                 
                 
             }
